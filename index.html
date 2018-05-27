@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>JsonToList</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="dist/css/index.css">
-  </head>
-  <body>
-    <div class="container">
-    <h1 style="padding-top: 35px; ">JSON Tree</h1>
-      <h4 style="padding-top: 40px;">A simple library to generate exandable lists from a json objects</h4>
-      <center style="padding-top: 40px;"><h4>Below are some examples of the library</h4></center>
-      <h4 style="padding-top: 40px;">1. Basic</h4>
-      <div class="container" style="padding-top: 40px;">
-  <div class="row">
-    <div class="col-sm">
-      <center><h5>JSON</h5></center><br />
-      <pre>[
+   <head>
+      <meta charset="utf-8">
+      <title>JsonToList</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="dist/css/index.css">
+   </head>
+   <body>
+      <div class="container">
+         <h1 style="padding-top: 35px; ">JSON Tree</h1>
+         <h4 style="padding-top: 40px;">A simple library to generate exandable lists from a json objects</h4>
+         <center style="padding-top: 40px;">
+            <h4>Below are some examples of the library</h4>
+         </center>
+         <h4 style="padding-top: 40px;">1.  Simple Slide/Opacity Animation</h4>
+         <div class="container" style="padding-top: 40px;">
+            <div class="row">
+               <div class="col-sm">
+                  <center>
+                     <h5>JSON</h5>
+                  </center>
+                  <br />
+                  <pre>[
   {
     type: "file",
     name: "document"
@@ -47,108 +52,13 @@
     ]
   }
 ]</pre>
-    </div>
-    <div class="col-sm">
-      <center><h5>Animation</h5></center><br />
-      None ({} - empty object)
-    </div>
-    <div class="col-sm">
-      <center><h5>Result</h5></center><br />
-    <div class="treecontainer"><div id="target1"></div></div>
-    </div>
-  </div>
-</div>
-      
-      <h4 style="padding-top: 40px;">1. Simple Slide/Opacity Animation</h4>
-       <div class="container" style="padding-top: 40px;">
-  <div class="row">
-    <div class="col-sm">
-      <center><h5>JSON</h5></center><br />
-           <pre>[
-  {
-    type: "file",
-    name: "document"
-  },
-  {
-    type: "folder",
-    name: "Desktop",
-    children: [
-      {
-        type: "file",
-        name: "subFile.txt"
-      },
-      {
-        type: "file",
-        name: "subFile2.txt"
-      },
-      {
-        type: "folder",
-        name: "subFolder2",
-        children: [
-          {
-            type: "file",
-            name: "subFolder2File"
-          }
-        ]
-      }
-    ]
-  }
-]</pre>
-    </div>
-    <div class="col-sm">
-      <center><h5>Animation</h5></center><br />
-      None ({} - empty object)
-    </div>
-    <div class="col-sm">
-    <div class="treecontainer"><div id="target2"></div></div>
-    </div>
-  </div>
-</div>
-
-    </div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-
-</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js">
-
-</script>
-<script type="text/javascript" src="dist/js/tree.min.js">
-
-</script>
-<script>
-var json = [
-  {
-    type: "file",
-    name: "document"
-  },
-  {
-    type: "folder",
-    name: "Desktop",
-    children: [
-      {
-        type: "file",
-        name: "subFile.txt"
-      },
-      {
-        type: "file",
-        name: "subFile2.txt"
-      },
-      {
-        type: "folder",
-        name: "subFolder2",
-        children: [
-          {
-            type: "file",
-            name: "subFolder2File"
-          }
-        ]
-      }
-    ]
-  }
-];
-
+               </div>
+               <div class="col-sm">
+                  <center>
+                     <h5>Animation</h5>
+                  </center>
+                  <br />
+                  <pre>
 var beforeEnterState = {
    "transform":"translateX(-200px)",
    "opacity":0
@@ -166,23 +76,144 @@ var afterEnterState = {
   "transform":"translateX(0px)",
   "opacity": "0"
 };
-
-var options = {
-  beforeEnterState,
-  enterAnimation,
-  leaveAnimation,
-  afterEnterState,
-}
-
-var list = Tree.createList(json)
-$("#target1").append(list);
-  
-  Tree.setupList(options);
-  
-  var list2 = Tree.createList(json)
-$("#target2").append(list2);
- Tree.setupList();
-
-</script>
- </body>
+</pre>
+               </div>
+               <div class="col-sm">
+                  <center>
+                     <h5>Result</h5>
+                  </center>
+                  <br />
+                  <div class="treecontainer">
+                     <div id="target1"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <h4 style="padding-top: 40px;">2. Basic</h4>
+         <div class="container" style="padding-top: 40px;">
+            <div class="row">
+               <div class="col-sm">
+                  <center>
+                     <h5>JSON</h5>
+                  </center>
+                  <br />
+                  <pre>[
+  {
+    type: "file",
+    name: "document"
+  },
+  {
+    type: "folder",
+    name: "Desktop",
+    children: [
+      {
+        type: "file",
+        name: "subFile.txt"
+      },
+      {
+        type: "file",
+        name: "subFile2.txt"
+      },
+      {
+        type: "folder",
+        name: "subFolder2",
+        children: [
+          {
+            type: "file",
+            name: "subFolder2File"
+          }
+        ]
+      }
+    ]
+  }
+]</pre>
+               </div>
+               <div class="col-sm">
+                  <center>
+                     <h5>Animation</h5>
+                  </center>
+                  <br />
+                  None ({} - empty object)
+               </div>
+               <div class="col-sm">
+                  <div class="treecontainer">
+                     <div id="target2"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
+      <script type="text/javascript" src="dist/js/tree.min.js"></script>
+      <script>
+         var json = [
+           {
+             type: "file",
+             name: "document"
+           },
+           {
+             type: "folder",
+             name: "Desktop",
+             children: [
+               {
+                 type: "file",
+                 name: "subFile.txt"
+               },
+               {
+                 type: "file",
+                 name: "subFile2.txt"
+               },
+               {
+                 type: "folder",
+                 name: "subFolder2",
+                 children: [
+                   {
+                     type: "file",
+                     name: "subFolder2File"
+                   }
+                 ]
+               }
+             ]
+           }
+         ];
+         
+         var beforeEnterState = {
+            "transform":"translateX(-200px)",
+            "opacity":0
+         };
+         var enterAnimation = {
+            translateX: 0,
+            opacity: 1,
+         };
+         
+         var leaveAnimation = {
+           translateX: 200,
+           opacity: 0
+         };
+         var afterEnterState = {
+           "transform":"translateX(0px)",
+           "opacity": "0"
+         };
+         
+         var options = {
+           beforeEnterState,
+           enterAnimation,
+           leaveAnimation,
+           afterEnterState,
+         }
+         
+         var list = Tree.createList(json)
+         $("#target1").append(list);
+           
+           Tree.setupList(options);
+           
+           var list2 = Tree.createList(json)
+         $("#target2").append(list2);
+          Tree.setupList();
+         
+      </script>
+   </body>
 </html>
