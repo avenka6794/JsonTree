@@ -10,6 +10,6 @@ li.tree.closed > ul {
 li.tree.open > ul {
   display: block;
 }
-.container{
+.treecontainer{
   overflow: hidden;
 }

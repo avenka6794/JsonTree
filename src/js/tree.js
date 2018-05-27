@@ -1,5 +1,6 @@
 var Tree = (function() {
 
+  var instances = 1;
     //create unordered list representing file structure
     this.createList = function(arr) {
 
@@ -14,7 +15,7 @@ var Tree = (function() {
                     //recursive call to create ul for nested folder
                     var innerUl = createList(arr[i].children);
                     //make initially closed
-                    var li = $("<li class='tree closed'>" + arr[i].name + "</li>");
+                    var li = $("<li class='tree "+instances+" closed'>" + arr[i].name + "</li>");
                     li.append(innerUl[0]);
                     ul.append(li);
                 }
@@ -34,10 +35,11 @@ var Tree = (function() {
               }
             }
           //initial material icons
-          $("li.closed").prepend('<i class="material-icons tree">chevron_right</i>');
-          $("li.open").prepend('<i class="material-icons tree">expand_more</i>');
+          console.log(("li"+instances+".closed"))
+          $("li."+instances+".closed").prepend('<i class="material-icons tree '+instances+'">chevron_right</i>');
+          $("li."+instances+".open").prepend('<i class="material-icons tree '+instances+'">expand_more</i>');
 
-          $("i.tree").click(function() {
+          $("i.tree."+instances).click(function() {
               var $li = $(this)
               var state = $li
                   .parent()
@@ -75,6 +77,7 @@ var Tree = (function() {
                   anime(enterOptions);
               }
           });
+          instances+=1;
 
         }
 
