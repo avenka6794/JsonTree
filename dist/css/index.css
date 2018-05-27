@@ -1,0 +1,15 @@
+/* CSS is required to function properly*/
+
+ul.tree { list-style: none;
+  font-size: 32px;
+}
+li.tree.closed > ul {
+  display: none;
+}
+
+li.tree.open > ul {
+  display: block;
+}
+.container{
+  overflow: hidden;
+}

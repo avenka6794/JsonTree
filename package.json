@@ -1,0 +1,33 @@
+{
+  "name": "jsontree",
+  "version": "1.0.0",
+  "description": "simple library to create expandable html list from json",
+  "main": "gulpfile.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "gulp": "./node_modules/gulp/bin/gulp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avenka6794/JsonTree.git"
+  },
+  "author": "Abhishek Venkat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avenka6794/JsonTree/issues"
+  },
+  "homepage": "https://github.com/avenka6794/JsonTree#readme",
+  "devDependencies": {
+    "@babel/register": "^7.0.0-beta.49",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "browser-sync": "^2.24.4",
+    "del": "^3.0.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-uglify": "^3.0.0"
+  }
+}
